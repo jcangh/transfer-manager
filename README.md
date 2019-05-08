@@ -1,5 +1,7 @@
 ### Transfer manager application
 
+#### Purpose
+
 API Rest excercise to handle money transfer between accounts
 
 ### Dependencies
