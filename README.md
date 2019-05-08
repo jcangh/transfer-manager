@@ -30,6 +30,7 @@ API Rest excercise to handle money transfer between accounts
 | 200            | accounts               | used in PUT, GET action|
 | 400            | transactions           | used in POST action to express errors in transaction operation|
 | 404            | accounts               | when a given account does not exists |
+| 500		 | all			  | for internal server errors |
 
 ### Payload examples
 
