@@ -13,6 +13,7 @@ import org.mockito.Spy;
 import com.jca.transfermanager.dao.AccountDAO;
 import com.jca.transfermanager.dao.impl.AccountDAOImpl;
 import com.jca.transfermanager.dao.util.HibernateUtil;
+import com.jca.transfermanager.exception.NotFoundException;
 import com.jca.transfermanager.model.Account;
 
 public class AccountServiceTest {
@@ -46,5 +47,14 @@ public class AccountServiceTest {
 		Assert.assertEquals(account.getBalance().stripTrailingZeros(), 
 				createdAccount.getBalance().stripTrailingZeros());
 		
+	}
+	
+	@Test(expected = NotFoundException.class)
+	public void testNotExistingAccount() {
+		//Given
+		String accountId = "sjk-12345as";
+		
+		//When
+		service.getById(accountId);
 	}
 }
